@@ -10,10 +10,11 @@ $(document).on("ready", function() {
 
 	$quakesList = $.ajax({
 		method: "GET",
-		url: weekly_quakes_endpoint
+		url: weekly_quakes_endpoint	
 	})
 	.done(function(data) {
 		var earthquake = data.features;
+		var occTime = data.features / (24*60*60*1000);
 		// a = data.features[0].properties.updated
 		// b = data.features[0].properties.time
 		// console.log(a - b);
